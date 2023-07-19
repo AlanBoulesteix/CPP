@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:09:16 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/18 17:17:33 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/19 09:38:30 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class	Zombie{
 	
 	std::string		_name;	
 };
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif

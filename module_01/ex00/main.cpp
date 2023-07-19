@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:08:35 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/18 17:17:54 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/19 09:52:51 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 int	main(void)
 {
-	Zombie	zombie("alan");
+	Zombie*	zombie;
 
+	zombie = newZombie("Foo");
+	randomChump("Boo");
+	zombie->announce();
+	delete zombie;
 	return (0);
 }
