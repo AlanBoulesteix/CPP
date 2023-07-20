@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:39:19 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/19 18:10:27 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:53:04 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanB{
 		~HumanB( void );
 
 		void	attack( void );
-		void	setWeapon( Weapon weapon );
+		void	setWeapon( Weapon *weapon );
 	
 	private:
 	
