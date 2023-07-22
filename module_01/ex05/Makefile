@@ -10,14 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= replace
+NAME	:= Harl
 
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 
 SRC		:= 	main.cpp \
+			Harl.cpp \
 
-INCLUDE	:=	Replace.hpp \
+INCLUDE	:=	Harl.hpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 
