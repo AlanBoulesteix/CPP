@@ -8,17 +8,17 @@ class Fixed{
     public:
 
     Fixed( void );
-    Fixed( Fixed const *fixed );
+    Fixed( const Fixed &fixed );
     ~Fixed( void );
 
-    Fixed&  operator=( Fixed fixed );
-    int     getRawBits( void );
+    Fixed&  operator=( Fixed const & fixed );
+    int     getRawBits( void ) const;
     void    setRawBits( int const raw );
     
     private:
 
     int                 _n;
-    static int const    _nBit;
+    static int const    _nBit = 8;
 
 };
 
