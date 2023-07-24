@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 17:37:41 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/24 18:28:37 by aboulest         ###   ########.fr       */
+/*   Created: 2023/07/24 18:32:34 by aboulest          #+#    #+#             */
+/*   Updated: 2023/07/24 18:40:30 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int main( void ) {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
+class Fixed{
 
-    c = b;
+	public:
+	
+	//Constructor
+	Fixed( void );
+	Fixed( const Fixed &fixed);
+	Fixed( const int integer );
+	Fixed( const float flo);
+	~Fixed( void );
+	
+	//Overload
+	Fixed& 	operator=(const Fixed &fixed);
+	
+	//Functions
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
+	
+	private:
+	
+	//Attributs
+	int	_n;
+	int	_nBits = 8;
+};
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
-    return 0;
-}
+#endif
