@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:32:29 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/26 16:34:42 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/27 17:06:26 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ Fixed	Fixed::operator/(const Fixed &fixed ) const {
 		std::cerr << "Divinding by 0 is not possbile" << std::endl;
 		return (this->toFloat());
 	}
-	return (Fixed(this->toFloat() / fixed.toFloat()));
+	return ( (this->toFloat() / fixed.toFloat()));
 };
 
 const Fixed	&Fixed::min( const Fixed& nb1, const Fixed& nb2 ){

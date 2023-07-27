@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:17:47 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/27 15:22:36 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/27 17:30:29 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	exempleOk2(void){
 };
 
 void	exempleOk3(void){
-	Point a(4,4), b(6,1), c(2,1), point(4,4);
+	Point a(-4,-4), b(-6,-1), c(-2,-1), point(-4,-3);
 	std::cout << "Le point" << point
 			<< " est il dans le triangle ayant pour sommet :" << std::endl
 			<< "A" << a << " B" << b << " C" << c << " ?" << std::endl;
@@ -48,8 +48,8 @@ void	exempleOk3(void){
 
 int main(void)
 {
-	exempleOk();
 	exempleKo();
+	exempleOk();
 	exempleOk2();
 	exempleOk3();
 }

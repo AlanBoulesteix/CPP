@@ -6,35 +6,20 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 17:48:51 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/27 15:18:34 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/27 17:28:45 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Fixed	abs(Fixed nb)
-{
-	return ((nb < 0 ? nb * (-1) : nb));
-}
+bool bsp( Point const a, Point const b, Point const c, Point const p){
 
-Fixed	area( Point const p1, Point const p2, Point const p3){
-	Fixed a;
+	
+	Fixed w1 ((a.getX()*(c.getY()-a.getY())+(p.getY()-a.getY())*(c.getX()-a.getX())-p.getX()*(c.getY()-a.getY()))
+			/((b.getY()-a.getY())*(c.getX()-a.getX())-(b.getX()-a.getX())*(c.getY()-a.getY())));
+	Fixed w2 ((p.getY()-a.getY()-w1 * (b.getY()-a.getY()))/(c.getY()-a.getY()));
 
-	a = (p1.getX()*(p2.getY()-p3.getY())) + (p2.getX()*(p3.getY()-p1.getY())) + (p3.getX()*(p1.getY() - p2.getY()));
-	return (abs(a)/2);
-};
-
-bool bsp( Point const a, Point const b, Point const c, Point const point){
-
-	Fixed abc, abpoint, acpoint, bcpoint;
-		
-	abc = area(a, b, c);
-	abpoint = area(a, b, point);
-	acpoint = area(a, c, point);
-	bcpoint = area(b, c, point);
-	if (abc == 0 || abpoint == 0 || acpoint == 0 || bcpoint == 0)
-		return (false);
-	if (abpoint + acpoint + bcpoint == abc)
+	if (w1 >= 0 && w2 >= 0 && (w1 + w2)<= 1)
 		return (true);
 	return (false);
 }; 
