@@ -14,7 +14,7 @@ int     checkInput(std::string level){
 
 int main(int ac, char **av){
     Harl            harl;
-    int             end;
+    int             end = 0;
     std::string     listLevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
     if (ac != 2)
@@ -39,7 +39,7 @@ int main(int ac, char **av){
             break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            exit(0);
+            return (0);
     }
     for (int i = end; i < 4; ++i)
     {

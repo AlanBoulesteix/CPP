@@ -17,7 +17,7 @@ void    Harl::debug(void){
 };
 
 void    Harl::info(void){
-    std::cout << "[\033[32mINFO\033[0m ]"<< std::endl
+    std::cout << "[ \033[32mINFO\033[0m ]"<< std::endl
             << "I cannot believe adding extra bacon costs more money" << std::endl
             << "You didn’t put enough bacon in my burger ! " << std::endl
             << "If you did, I wouldn’t be asking for more !" << std::endl;
