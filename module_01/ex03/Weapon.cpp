@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:01:57 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/19 17:38:49 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/28 18:06:43 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::~Weapon(){
 
 };
 
-std::string	Weapon::getType(void){
+const std::string&	Weapon::getType(void){
 	return (_type);	
 };
 

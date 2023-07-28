@@ -6,13 +6,13 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 16:39:14 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/20 19:05:35 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/28 18:08:41 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name):_name(name){
+HumanB::HumanB(std::string name):_name(name), _weapon(NULL){
 	
 };
 
