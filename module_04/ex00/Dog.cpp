@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:19:21 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/01 13:19:22 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:19:33 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Dog&	Dog::operator=( const Dog &rhs ){
 	return (*this);
 };
 
-void	Dog::makeSound( void ){
+void	Dog::makeSound( void ) const {
 	std::cout << "WOOF WOOF" << std::endl;
 };

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:18:42 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/01 13:19:07 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:32:21 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include "Animal.hpp"
 
-class Cat : virtual public Animal {
+class Cat : public Animal {
 
 	public:
 	
@@ -26,7 +26,7 @@ class Cat : virtual public Animal {
 
 	Cat&	operator=( const Cat &rhs );
 
-	void	makeSound( void );
+	virtual void	makeSound( void ) const ;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:19:30 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/01 13:20:02 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 17:19:37 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ Cat&	Cat::operator=( const Cat &rhs ){
 	return (*this);
 };
 
-void	Cat::makeSound( void ){
+void	Cat::makeSound( void ) const {
 	std::cout << "MIAOU MIAOU" << std::endl;
 };
