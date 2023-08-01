@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 16:43:41 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/01 09:22:51 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 11:23:53 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap {
+class DiamondTrap: virtual public FragTrap, virtual public ScavTrap {
 	
 	public:
 
