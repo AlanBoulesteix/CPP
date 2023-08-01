@@ -6,27 +6,27 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 08:44:25 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 14:38:38 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/07/31 15:29:11 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ): _name("ClapTrap"), _hitPoint(HPMAX), _energyPoint(EPMAX), _attackDamage(ATTACKDAMAGE){
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default Constructor of " << _name << " called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoint(HPMAX), _energyPoint(EPMAX), _attackDamage(ATTACKDAMAGE){
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default Constructor of " << _name << " called" << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap &original){
-	std::cout << "Copy Constructor called" << std::endl;
 	*this = original;
+	std::cout << "Copy Constructor of " << _name << " called" << std::endl;
 };
 
-ClapTrap::~ClapTrap(){
-	std::cout << "Default Destructor called" << std::endl;
+ClapTrap::~ClapTrap( void ){
+	std::cout << "Default Destructor of " << _name << " called" << std::endl;
 };
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap &rhs ){
@@ -39,6 +39,10 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap &rhs ){
 	}
 	return (*this);
 };
+
+int		ClapTrap::getDamage( void ) const {
+	return (_attackDamage);
+}
 
 void	ClapTrap::attack( const std::string& target ){
 
@@ -54,7 +58,6 @@ void	ClapTrap::attack( const std::string& target ){
 		std::cout << "ClapTrap " << _name << ": Oops ! I dont't have any power left." << std::endl;
 	else if (_energyPoint > 0)
 		std::cout << "ClapTrap " << _name << ": I don't have any HP left, I can do s*** !" << std::endl;
-
 };
 
 void	ClapTrap::takeDamage( unsigned int amount ){
@@ -80,5 +83,5 @@ void	ClapTrap::beRepaired( unsigned int amount ){
 	else if (_hitPoint > 0)
 		std::cout << "ClapTrap " << _name << ": Oops ! I dont't have any power left." << std::endl;
 	else if (_energyPoint > 0)
-		std::cout << "ClapTrap " << _name << ": I don't have any HP left, I can do s*** !" << std::endl;
+		std::cout << "ClapTrap " << _name << ": I don't have any HP left, I'm not able to repair myself !" << std::endl;
 };

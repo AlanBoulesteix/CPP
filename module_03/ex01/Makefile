@@ -6,19 +6,21 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/07/31 16:42:08 by aboulest         ###   ########.fr        #
+#    Updated: 2023/07/31 16:42:01 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= ClapTrap
+NAME	:= ScavTrap
 
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 
 SRC		:= 	main.cpp \
 			ClapTrap.cpp \
+			ScavTrap.cpp \
 
 INCLUDE	:=	ClapTrap.hpp \
+			ScavTrap.hpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 
