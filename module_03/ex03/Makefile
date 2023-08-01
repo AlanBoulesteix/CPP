@@ -6,11 +6,11 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/07/31 16:41:50 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/01 07:59:15 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= FragTrap
+NAME	:= DiamondTrap
 
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
@@ -19,10 +19,12 @@ SRC		:= 	main.cpp \
 			ClapTrap.cpp \
 			ScavTrap.cpp \
 			FragTrap.cpp \
+			DiamondTrap.cpp \
 
 INCLUDE	:=	ClapTrap.hpp \
 			ScavTrap.hpp \
 			FragTrap.hpp \
+			DiamondTrap.hpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 

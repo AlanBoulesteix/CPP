@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 16:06:20 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 16:31:10 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 08:34:52 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define FRAG_EP 100
 #define FRAG_DAMAGE 30
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	
 	public:
 		

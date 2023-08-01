@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:00:35 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 14:47:42 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 08:23:35 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 class ScavTrap: public ClapTrap{
 
 	public:
-
+	
+	ScavTrap( void );
 	ScavTrap( std::string name );
 	ScavTrap( const ScavTrap &scavTrap );
 	~ScavTrap( void );

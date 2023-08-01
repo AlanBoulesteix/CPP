@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:00:35 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 14:47:42 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 08:34:45 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 #define SCAV_EP 50
 #define SCAV_DAMAGE 20
 
-class ScavTrap: public ClapTrap{
+class ScavTrap: virtual public ClapTrap{
 
 	public:
 
+	ScavTrap( void );
 	ScavTrap( std::string name );
 	ScavTrap( const ScavTrap &scavTrap );
 	~ScavTrap( void );

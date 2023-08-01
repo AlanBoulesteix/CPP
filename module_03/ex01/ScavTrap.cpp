@@ -6,11 +6,18 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:10:54 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 15:26:06 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/01 08:23:45 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap( void ): ClapTrap(){
+	std::cout << "ScavTrap default constructor of " << _name << " called" << std::endl;
+	_hitPoint = SCAV_HP;
+	_energyPoint = SCAV_EP;
+	_attackDamage = SCAV_DAMAGE;
+};
 
 ScavTrap::ScavTrap( std::string name ): ClapTrap(name){
 	std::cout << "ScavTrap default constructor of " << _name << " called" << std::endl;
