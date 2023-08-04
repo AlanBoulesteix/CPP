@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:04:53 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 16:36:49 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/04 12:13:22 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 #include "FragTrap.hpp"
 
 int main(void){
-	ClapTrap	alan("Alan");
+	ClapTrap	lilith("Lilith");
 	ScavTrap	beauJack("Beau Jack");
 	FragTrap	zero("Zero");
-
+	// ClapTrap	a = beauJack;
+	// ScavTrap	b = beauJack;
+	// FragTrap	c = zero;
+	
 	std::cout << "===========================" << std::endl;
-	alan.attack("Beau Jack");
-	beauJack.takeDamage(alan.getDamage());
+	lilith.attack("Beau Jack");
+	beauJack.takeDamage(lilith.getDamage());
 	beauJack.attack("Zero");
 	zero.takeDamage(beauJack.getDamage());
-	zero.attack("Alan");
-	alan.takeDamage(zero.getDamage());
+	zero.attack("Lilith");
+	lilith.takeDamage(zero.getDamage());
 	std::cout << "===========================" << std::endl;
 	beauJack.guardGate();
 	zero.highFivesGuys();
