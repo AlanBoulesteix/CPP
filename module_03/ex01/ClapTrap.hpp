@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 08:44:27 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 15:20:07 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:42:42 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ class ClapTrap{
 	int				_hitPoint;
 	int				_energyPoint;
 	int				_attackDamage;
-	
-	private :
 };
 
 #endif

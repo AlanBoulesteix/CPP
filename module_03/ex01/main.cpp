@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:04:53 by aboulest          #+#    #+#             */
-/*   Updated: 2023/07/31 15:22:56 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:55:59 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,30 @@
 #include "ClapTrap.hpp"
 
 int main(void){
-	ClapTrap	alan("Alan");
+	ClapTrap	lilith("Lilith");
 	ScavTrap	beauJack("Beau Jack");
-	ClapTrap	beauJack2(beauJack);
+	ClapTrap	zed(ScavTrap("Dr. Zed"));
 
 	std::cout << "=========================================" << std::endl;
-	for (int i = 0; i < 11; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		beauJack.attack("Alan");
 		if (i == 4)
 			beauJack.guardGate();
-		alan.takeDamage(beauJack.getDamage());
-		alan.attack("Beau Jack");
-		beauJack.takeDamage(alan.getDamage());
-		alan.beRepaired(0);
+		else
+		{
+			beauJack.attack("Lilith");
+			lilith.takeDamage(beauJack.getDamage());
+		}
+		if (i % 2)
+			lilith.beRepaired(0);
+		else
+		{
+			lilith.attack("Beau Jack");
+			beauJack.takeDamage(lilith.getDamage());
+		}
 		std::cout << "=========================================" << std::endl;
 	}
-	beauJack2.attack("Beau Jack");
-	beauJack.takeDamage(beauJack2.getDamage());
+	zed.attack("Beau Jack");
+	beauJack.takeDamage(zed.getDamage());
 	std::cout << "=========================================" << std::endl;
 }
