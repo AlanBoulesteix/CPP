@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 22:52:43 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/08/01 23:01:38 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/03 13:40:26 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ class   WrongAnimal {
     WrongAnimal();
     WrongAnimal( std::string type );
     WrongAnimal(const WrongAnimal &original);
-    ~WrongAnimal();
+    virtual ~WrongAnimal();
     
     WrongAnimal& operator=( const WrongAnimal &rhs);
-    protected:
+    
+	virtual std::string	getType( void );
+	virtual void		makeSound( void ) const;
+	
+	protected:
   
     std::string   _type;  
 };

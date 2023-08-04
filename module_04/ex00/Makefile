@@ -6,7 +6,7 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/01 11:30:33 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/03 11:09:09 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,14 @@ SRC		:= 	main.cpp \
 			Animal.cpp \
 			Cat.cpp \
 			Dog.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp \
 
 INCLUDE	:= Animal.hpp \
 			Cat.hpp \
 			Dog.hpp \
+			WrongAnimal.hpp \
+			WrongCat.hpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:28:35 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/01 17:19:29 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:55:28 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ Animal&	Animal::operator=( const Animal &rhs ){
 };
 
 void	Animal::makeSound( void ) const {
-	std::cout << "Random Sound" << std::endl;
+	std::cout << _type << ": Random Sound" << std::endl;
 };
 
