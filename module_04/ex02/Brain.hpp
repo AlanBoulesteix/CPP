@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 22:46:29 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/08/06 23:08:41 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/07 16:38:35 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

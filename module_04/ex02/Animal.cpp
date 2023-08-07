@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:28:35 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 13:51:43 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/07 17:26:28 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,13 @@ Animal::~Animal( void ){
 	std::cout << "Default Animal Destructor called" << std::endl;
 };
 
+std::string		Animal::getType( void ) const {
+	return (_type);
+};
+
+Animal&	Animal::operator=( const Animal &rhs ){
+	std::cout << "Animal Assignation called" << std::endl;
+	if (this != &rhs)
+		_type = rhs._type;
+	return (*this);
+};
