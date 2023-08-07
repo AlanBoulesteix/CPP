@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
+#    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/07 14:33:57 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/06 23:04:56 by alanboulest      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,14 @@ SRC		:= 	main.cpp \
 			Dog.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp \
+			Brain.cpp \
 
 INCLUDE	:= Animal.hpp \
 			Cat.hpp \
 			Dog.hpp \
 			WrongAnimal.hpp \
 			WrongCat.hpp \
+			Brain.hpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 
@@ -34,7 +36,7 @@ OBJ		:=$(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE) 
+$(NAME): $(OBJ) ${INCLUDE} 
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 %.o: %.cpp

@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 12:22:22 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 11:34:38 by aboulest         ###   ########.fr       */
+/*   Created: 2023/08/01 11:28:33 by aboulest          #+#    #+#             */
+/*   Updated: 2023/08/07 13:52:13 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
-#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal {
+class Animal{
 
 	public:
 	
-	Dog( void );
-	Dog( const Dog &original );
-	~Dog( void );
+	Animal( void );
+	Animal( std::string name );
+	Animal( const Animal &original );
+	virtual ~Animal( void );
 
-	Dog&	operator=( const Dog &rhs );
+	Animal&	operator=( const Animal &rhs );
+	
+	virtual void			makeSound( void ) const = 0;
+	virtual std::string		getType( void ) const = 0;
+	virtual Brain			*getBrain( void ) const = 0;
 
-	virtual void	makeSound( void ) const ;
-	virtual Brain	*getBrain( void ) const ;
+	protected:
 
-	private:
+	std::string		_type;
 
-	Brain*	_brain;
 };
 
 #endif

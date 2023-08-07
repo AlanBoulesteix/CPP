@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 12:22:22 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 11:34:38 by aboulest         ###   ########.fr       */
+/*   Created: 2023/08/01 22:52:57 by alanboulest       #+#    #+#             */
+/*   Updated: 2023/08/03 13:39:51 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
+#include "WrongAnimal.hpp"
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal {
-
-	public:
+class	WrongCat : virtual public WrongAnimal {
 	
-	Dog( void );
-	Dog( const Dog &original );
-	~Dog( void );
+	public:
 
-	Dog&	operator=( const Dog &rhs );
+	WrongCat();
+	WrongCat(const WrongCat &original);
+	virtual ~WrongCat();
+	
+	WrongCat&	operator=(const WrongCat &rhs);
 
-	virtual void	makeSound( void ) const ;
-	virtual Brain	*getBrain( void ) const ;
-
-	private:
-
-	Brain*	_brain;
+	virtual void	makeSound() const;
+	
 };
 
 #endif

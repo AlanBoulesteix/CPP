@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 22:52:43 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/08/03 13:40:26 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:03:48 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class   WrongAnimal {
     
     WrongAnimal& operator=( const WrongAnimal &rhs);
     
-	virtual std::string	getType( void );
-	virtual void		makeSound( void ) const;
+	std::string	getType( void );
+	void		makeSound( void ) const;
 	
 	protected:
   

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:09:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 13:55:30 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/07 13:49:00 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int main(void)
 {
 	int				nbAnimal = 5;
 	const Animal	**listAnimal = new const Animal*[nbAnimal];
-	// Animal			animal(); //Test la classe Animal ne peut pas etre instanciee
 	std::string		input;
 	
 	for (int i = 0; i < nbAnimal; i++)
