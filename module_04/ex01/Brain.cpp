@@ -6,29 +6,32 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 22:50:51 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/08/07 11:06:18 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/07 16:39:20 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 Brain::Brain(): _nbIdeas(0){
-    
+	std::cout << "Default Constructor Brain called" << std::endl;
 };
 
 Brain::Brain(const Brain &original): _nbIdeas(original.getNbIdeas()){
-    
+	std::cout << "Copy Constructor Brain called" << std::endl;
+	for (int i = 0; i < _nbIdeas; i++)
+		_ideas[i] = original._ideas[i];
 };
 
 Brain::~Brain(){
-    
+	std::cout << "Destructor Brain called" << std::endl;
 };
 
 Brain&  Brain::operator=(const Brain &rhs){
     if (this != &rhs)
 	{
-        _ideas[0] = rhs._ideas[0];
         _nbIdeas = rhs._nbIdeas;
+        for (int i = 0; i < _nbIdeas; i++)
+			_ideas[i] = rhs._ideas[i];
 	}
     return (*this);
 };
