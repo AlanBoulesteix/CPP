@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:52:15 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 15:38:33 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/08 22:17:58 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
 
+# define MATERIA_MAX 4
+
 class	Character : public ICharacter{
 	
 	public:
@@ -23,6 +25,8 @@ class	Character : public ICharacter{
 		Character(std::string name);
 		Character(const Character &original);
 		virtual ~Character();
+		
+		Character   &operator=(const Character &rhs);
 		
 		virtual std::string const	&getName();
 		virtual void				equip(AMateria* m);
@@ -33,8 +37,8 @@ class	Character : public ICharacter{
 	private:
 	
 		std::string	_name;
-		AMateria	_materias[4];
-		int			_nbMateria;
+		AMateria	*_materias[MATERIA_MAX];
+		int			_nbMaterias;
 };
 
 #endif
