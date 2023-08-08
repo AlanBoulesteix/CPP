@@ -6,7 +6,7 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/08 13:19:52 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/08 15:24:01 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,11 @@ CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -MMD -std=c++98
 
 SRC		:= 	main.cpp \
-			Animal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp \
-			Brain.cpp \
+			ICharacter.cpp \
+			Character.cpp \
+			AMateria.cpp \
+			Cure.cpp \
+			Ice.cpp \
 
 OBJ		:=$(SRC:.cpp=.o)
 DEPS	:=$(SRC:.cpp=.d)
