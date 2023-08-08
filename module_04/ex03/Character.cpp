@@ -6,22 +6,37 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:53:13 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 22:17:16 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/08 22:39:48 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(std::string name): _name(name), _nbMaterias(0){
-    
+    #ifdef DEBUG
+		std::cout << "Character Default with param Constructor called" << std::endl;
+	#endif
 };
 
 Character::Character(const Character &original){
-    
+    #ifdef DEBUG
+		std::cout << "Character Copy Constructor called" << std::endl;
+	#endif
+};
+
+Character::~Character(){
+    #ifdef DEBUG
+		std::cout << "Character Default Destructor called" << std::endl;
+	#endif
+	for (int i = 0; i < _nbMaterias; i++)
+        delete _materias[i];
 };
 
 Character   &Character::operator=(const Character &rhs)
 {
+    #ifdef DEBUG
+		std::cout << "Character Assignation Constructor called" << std::endl;
+	#endif
     if (this != &rhs)
     {
         _name = rhs._name;
@@ -32,17 +47,12 @@ Character   &Character::operator=(const Character &rhs)
     return (*this);
 }
 
-Character::~Character(){
-	for (int i = 0; i < _nbMaterias; i++)
-        delete _materias[i];
-};
-
 std::string const	&Character::getName(){
 	return (_name);
 };
 
 void	Character::equip(AMateria* m){
-    if (_nbMaterias != 4)
+    if (_nbMaterias < 4)
     {
         _materias[_nbMaterias] = m;
         _nbMaterias++;  

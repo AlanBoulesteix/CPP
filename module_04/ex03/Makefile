@@ -6,7 +6,7 @@
 #    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/08 21:15:25 by alanboulest      ###   ########.fr        #
+#    Updated: 2023/08/08 22:24:41 by alanboulest      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,9 @@ $(NAME): $(OBJ)
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
+
+debug: FLAGS += -D DEBUG
+debug: re
 
 clean:
 	rm -rf $(OBJ)

@@ -3,33 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:25:58 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 15:41:08 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/08 22:22:26 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria(void){
-	std::cout << "AMateria Default Constructor called" << std::endl;
+	#ifdef DEBUG
+		std::cout << "AMateria Default Constructor called" << std::endl;
+	#endif
 };
 
 AMateria::AMateria(std::string const & type): _type(type){
-	std::cout << "AMateria Default with param Constructor called" << std::endl;
+	#ifdef DEBUG
+		std::cout << "AMateria Default with param Constructor called" << std::endl;
+	#endif
 };
 
 AMateria::AMateria(const AMateria &original): _type(original._type){
-	std::cout << "AMateria Copy Constructor called" << std::endl;
+	#ifdef DEBUG
+		std::cout << "AMateria Copy Constructor called" << std::endl;
+	#endif
 };
 
 AMateria::~AMateria(){
-	std::cout << "AMateria Default Destructor called" << std::endl;
+	#ifdef DEBUG
+		std::cout << "AMateria Default Destructor called" << std::endl;
+	#endif
 };
 
 AMateria	&AMateria::operator=(const AMateria &rhs){
-	std::cout << "AMateria Assignation Constructor called" << std::endl;
+	#ifdef DEBUG
+		std::cout << "AMateria Assignation Constructor called" << std::endl;
+	#endif
 	if (this != &rhs)
 		_type = rhs.getType();
 	return (*this);
