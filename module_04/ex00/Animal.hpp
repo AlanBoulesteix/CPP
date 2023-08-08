@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:28:33 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/03 11:02:52 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:12:48 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Animal{
 	protected:
 
 	std::string		_type;
-
 };
 
 #endif

@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
+#    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/06 23:04:56 by alanboulest      ###   ########.fr        #
+#    Updated: 2023/08/08 13:19:11 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= Polymorphisme
 
 CC		:= c++
-FLAGS	:= -Wall -Wextra -Werror -std=c++98
+FLAGS	:= -Wall -Wextra -Werror -MMD -std=c++98 
 
 SRC		:= 	main.cpp \
 			Animal.cpp \
@@ -23,20 +23,14 @@ SRC		:= 	main.cpp \
 			WrongCat.cpp \
 			Brain.cpp \
 
-INCLUDE	:= Animal.hpp \
-			Cat.hpp \
-			Dog.hpp \
-			WrongAnimal.hpp \
-			WrongCat.hpp \
-			Brain.hpp \
-
 OBJ		:=$(SRC:.cpp=.o)
+DEPS	:=$(SRC:.cpp=.d)
 
 ###########################################################
 
 all: $(NAME)
 
-$(NAME): $(OBJ) ${INCLUDE} 
+$(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
 %.o: %.cpp
@@ -51,3 +45,5 @@ fclean: clean
 re: fclean all
 
 .PHONY : all clean fclean re
+
+-include $(DEPS)
