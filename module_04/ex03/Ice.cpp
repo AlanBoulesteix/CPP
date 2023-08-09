@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 15:19:40 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 22:38:31 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/09 15:32:28 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Ice::Ice(const Ice &original): AMateria("ice"){
 	#ifdef DEBUG
 		std::cout << " Ice Copy Constructor called" << std::endl;
 	#endif
+	(void)original;
 };
 
 Ice::~Ice(){

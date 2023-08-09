@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:32:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 15:27:45 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:25:13 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ICHARACTER_HPP
 
 #include "AMateria.hpp"
+
+class AMateria;
 
 class	ICharacter{
 		

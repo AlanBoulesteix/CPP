@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:57:25 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 22:34:57 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/09 16:43:52 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class Cure : public AMateria{
 		
 		virtual void		use(ICharacter& target);
 		virtual AMateria	*clone() const;
-};
+}; 
 
 #endif

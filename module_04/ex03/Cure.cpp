@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 15:19:38 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 22:35:59 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/09 15:32:11 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cure::Cure(const Cure &original): AMateria("cure"){
 	#ifdef DEBUG
 		std::cout << " Cure Copy Constructor called" << std::endl;
 	#endif
+	(void)original;
 };
 
 Cure::~Cure(){
