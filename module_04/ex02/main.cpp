@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:09:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 17:26:04 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:44:25 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
+# define NBANIMAL 6
+
 int main(void)
 {
 	std::cout << std::endl << "=============CONSTRUCTOR PART I=============" << std::endl;
-	int				nbAnimal = 5;
-	const Animal	**listAnimal = new const Animal*[nbAnimal];
+	const Animal	**listAnimal = new const Animal*[NBANIMAL];
 	std::string		input;
 	
-	for (int i = 0; i < nbAnimal; i++)
+	for (int i = 0; i < NBANIMAL; i++)
 	{
 		if (i % 2)
 			listAnimal[i] = new Dog();
@@ -32,18 +33,18 @@ int main(void)
 			listAnimal[i] = new Cat();
 	}
 	std::cout << std::endl << "===============Print Ideas=================" << std::endl;
-	for (int i = 0; i < nbAnimal; i++)
+	for (int i = 0; i < NBANIMAL; i++)
 	{
 		listAnimal[i]->getBrain()->printIdeas();
 		listAnimal[i]->makeSound();
 	}
 	std::cout << std::endl << "================DESTRUCTOR PART I====================" << std::endl;
-	for (int i = 0; i < nbAnimal; i++)
+	for (int i = 0; i < NBANIMAL; i++)
 		delete listAnimal[i];
 	delete[]	listAnimal;
 	std::cout << std::endl << "=============CONSTRUCTOR COPY PROFONDE=============" << std::endl;
 	Cat		*chat = new Cat();
-	chat->getBrain()->addIdea("Test");
+	chat->getBrain()->addIdea("Je suis un chat");
 	Cat		chat2 = *chat;
 	std::cout << std::endl << "=============DESTRUCTOR CAT PART I==============" << std::endl;
 	delete	chat;
