@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:19:21 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/10 14:54:16 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 23:13:58 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Dog::Dog( void ): AAnimal("Dog"){
 
 Dog::Dog( const Dog &original ): AAnimal(original._type){
 	std::cout << "Copy Dog Constructor called" << std::endl;
+	_brain = new Brain((*original.getBrain()));
 };
 
 Dog::~Dog( void ){
@@ -30,7 +31,10 @@ Dog::~Dog( void ){
 Dog&	Dog::operator=( const Dog &rhs ){
 	std::cout << "Dog Assignation called" << std::endl;
 	if (this != &rhs)
+	{
 		_type = rhs._type;
+		_brain = new Brain((*rhs.getBrain()));
+	}
 	return (*this);
 };
 
