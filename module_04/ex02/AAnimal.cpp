@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,30 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal( void ):_type("Random Animal"){
-	std::cout << "Default Animal Constructor called" << std::endl;
+AAnimal::AAnimal( void ):_type("Random AAnimal"){
+	std::cout << "Default AAnimal Constructor called" << std::endl;
 };
 
-Animal::Animal( std::string type ): _type(type) {
-	std::cout << "Default Animal Constructor called" << std::endl;
+AAnimal::AAnimal( std::string type ): _type(type) {
+	std::cout << "Default AAnimal Constructor called" << std::endl;
 };
 
-Animal::Animal( const Animal &original ): _type(original._type){
-	std::cout << "Copy Animal Constructor called" << std::endl;
+AAnimal::AAnimal( const AAnimal &original ): _type(original._type){
+	std::cout << "Copy AAnimal Constructor called" << std::endl;
 };
 
-Animal::~Animal( void ){
-	std::cout << "Default Animal Destructor called" << std::endl;
+AAnimal::~AAnimal( void ){
+	std::cout << "Default AAnimal Destructor called" << std::endl;
 };
 
-std::string		Animal::getType( void ) const {
+std::string		AAnimal::getType( void ) const {
 	return (_type);
 };
 
-Animal&	Animal::operator=( const Animal &rhs ){
-	std::cout << "Animal Assignation called" << std::endl;
+AAnimal&	AAnimal::operator=( const AAnimal &rhs ){
+	std::cout << "AAnimal Assignation called" << std::endl;
 	if (this != &rhs)
 		_type = rhs._type;
 	return (*this);

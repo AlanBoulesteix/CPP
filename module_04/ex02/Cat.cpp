@@ -6,18 +6,18 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:19:30 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 15:52:34 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:52:11 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat( void ): Animal("Cat"){
+Cat::Cat( void ): AAnimal("Cat"){
 	std::cout << "Default Cat Constructor called" << std::endl;
 	_brain = new Brain();
 };
 
-Cat::Cat( const Cat &original ): Animal(original._type){
+Cat::Cat( const Cat &original ): AAnimal(original._type){
 	std::cout << "Copy Cat Constructor called" << std::endl;
 	_brain = new Brain();
 	*_brain = *(original.getBrain());

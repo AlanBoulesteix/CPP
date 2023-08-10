@@ -6,18 +6,18 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 13:19:21 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/07 11:32:38 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:54:16 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ): Animal("Dog"){
+Dog::Dog( void ): AAnimal("Dog"){
 	std::cout << "Default Dog Constructor called" << std::endl;
 	_brain = new Brain();
 };
 
-Dog::Dog( const Dog &original ): Animal(original._type){
+Dog::Dog( const Dog &original ): AAnimal(original._type){
 	std::cout << "Copy Dog Constructor called" << std::endl;
 };
 

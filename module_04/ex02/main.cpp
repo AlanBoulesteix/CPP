@@ -6,11 +6,11 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:09:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/10 11:44:25 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:58:51 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -21,8 +21,9 @@
 
 int main(void)
 {
+	// const AAnimal animal("impossible");//Error
 	std::cout << std::endl << "=============CONSTRUCTOR PART I=============" << std::endl;
-	const Animal	**listAnimal = new const Animal*[NBANIMAL];
+	const AAnimal	**listAnimal = new const AAnimal*[NBANIMAL];
 	std::string		input;
 	
 	for (int i = 0; i < NBANIMAL; i++)
