@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:57:25 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/09 16:43:52 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:35:51 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 class Cure : public AMateria{
 
 	public:
+
 		Cure();
 		Cure(const Cure &original);
 		~Cure();
 		
-		Cure			&operator=(const Cure &rhs);
+		Cure	&operator=(const Cure &rhs);
 		
 		virtual void		use(ICharacter& target);
-		virtual AMateria	*clone() const;
+		virtual AMateria*	clone() const;
 }; 
 
 #endif

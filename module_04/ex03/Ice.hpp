@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:55:18 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/08 22:38:46 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/08/10 11:36:25 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 class Ice : public AMateria{
 
 	public:
+
 		Ice();
 		Ice(const Ice &original);
 		~Ice();
 		
-		Ice				&operator=(const Ice &rhs);
+		Ice	&operator=(const Ice &rhs);
 		
 		virtual void		use(ICharacter& target);
-		virtual AMateria	*clone() const;
+		virtual AMateria*	clone() const;
 };
 
 #endif

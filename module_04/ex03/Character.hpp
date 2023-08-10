@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 14:52:15 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/09 16:43:01 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:35:23 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ class	Character : public ICharacter{
 		virtual void				unequip(int idx);
 		virtual void				use(int idx, ICharacter& target);
 		int							getNbMateria() const;
-		
+		void						printMateria() const;
+	
 	private:
 	
-		std::string	_name;
-		AMateria	*_materias[MATERIA_MAX];
-		int			_nbMaterias;
+		std::string		_name;
+		AMateria*		_materias[MATERIA_MAX];
+		int				_nbMaterias;
 };
 
 #endif
