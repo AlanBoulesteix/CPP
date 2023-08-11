@@ -6,27 +6,28 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/09 16:31:40 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/11 10:44:47 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= materia
+NAME		:= materia
 
-CC		:= c++
-FLAGS	:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
+CC			:= c++
+FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
-SRC		:= 	main.cpp \
-			Character.cpp \
-			AMateria.cpp \
-			Cure.cpp \
-			Ice.cpp \
-			MateriaSource.cpp \
+SRC			:= 	main.cpp \
+				Character.cpp \
+				AMateria.cpp \
+				Cure.cpp \
+				Ice.cpp \
+				MateriaSource.cpp \
 
-OBJ_DIR := ./objs/
-OBJ		:=$(SRC:.cpp=.o)
+OBJ_DIR 	:= ./objs/
+C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
+OBJ			:=$(SRC:.cpp=.o)
+OBJ			:=$(addprefix $(OBJ_DIR), $(OBJ))
 
-OBJ		:=$(addprefix $(OBJ_DIR), $(OBJ))
-DEPS	:=$(OBJ:.o=.d)
+DEPS		:=$(OBJ:.o=.d)
 
 ###########################################################
 
@@ -35,20 +36,16 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
-$(OBJ_DIR)%.o: %.cpp $(OBJ_DIR)
-	
+$(OBJ_DIR)%.o: %.cpp 
+	$(C_OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
 
 debug: FLAGS += -D DEBUG
 debug: re
 
 clean:
 	rm -rf $(OBJ_DIR)
-# rm -rf $(OBJ)
-# rm -rf $(DEPS)
 
 fclean: clean
 	rm -rf $(NAME)
