@@ -6,38 +6,46 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/08/08 13:18:00 by aboulest         ###   ########.fr        #
+#    Updated: 2023/08/10 14:57:18 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= Polymorphisme
+NAME		:= polymorphisme
 
-CC		:= c++
-FLAGS	:= -Wall -Wextra -Werror -std=c++98 -MMD
+CC			:= c++
+FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
-SRC		:= 	main.cpp \
-			Animal.cpp \
-			Cat.cpp \
-			Dog.cpp \
-			WrongAnimal.cpp \
-			WrongCat.cpp \
-			
-OBJ		:=$(SRC:.cpp=.o)
-DEPS	:=$(SRC:.cpp=.d)
+SRC			:= 	main.cpp \
+				Animal.cpp \
+				Cat.cpp \
+				Dog.cpp \
+				WrongAnimal.cpp \
+				WrongCat.cpp \
+
+OBJ_DIR 	:= ./objs/
+C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
+OBJ			:=$(SRC:.cpp=.o)
+OBJ			:=$(addprefix $(OBJ_DIR), $(OBJ))
+
+DEPS		:=$(OBJ:.o=.d)
 
 ###########################################################
 
 all: $(NAME)
 
-$(NAME): $(OBJ) 
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME) 
 
-%.o: %.cpp
+$(OBJ_DIR)%.o: %.cpp 
+	$(C_OBJ_DIR)
 	$(CC) $(FLAGS) -c $< -o $@
 
+
+debug: FLAGS += -D DEBUG
+debug: re
+
 clean:
-	rm -rf $(OBJ)
-	rm -rf $(DEPS)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -rf $(NAME)

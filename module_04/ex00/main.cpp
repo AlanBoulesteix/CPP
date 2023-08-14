@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:09:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/03 13:46:16 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:14:01 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(void)
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+		
 	std::cout << "==================METHODES======================" << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
