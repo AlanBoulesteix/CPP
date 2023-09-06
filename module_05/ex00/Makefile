@@ -3,19 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
+#    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/06 07:26:54 by alanboulest      ###   ########.fr        #
+#    Updated: 2023/09/06 11:51:09 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= 
+NAME		:= bureaucrat
 
 CC			:= c++
 FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
-SRC			:= 	main.cpp
+SRC			:= 	main.cpp \
+				Bureaucrat.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
