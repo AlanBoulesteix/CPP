@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:09:16 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/06 14:20:48 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:05:34 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ Bureaucrat::Bureaucrat(){
 };
 
 Bureaucrat::Bureaucrat(std::string const name, int grade): _name(name) {
-	#ifdef DEBUG
-		std::cout << "Bureaucrat Default Constructor W/ Param called " << std::endl;
-	#endif
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
 	else
 		_grade = grade;
+	#ifdef DEBUG
+		std::cout << "Bureaucrat Default Constructor W/ Param called " << std::endl;
+	#endif
 };
 
 Bureaucrat::~Bureaucrat(){
@@ -49,12 +49,12 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src):_name(src._name), _grade(src._grad
 };
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const &rhs){
-	#ifdef DEBUG
-		std::cout << "Bureaucrat Assignation constructor called" << std::endl;
-	#endif
 	if (this != &rhs)
 		_grade = rhs._grade;
 	return (*this);
+	#ifdef DEBUG
+		std::cout << "Bureaucrat Assignation constructor called" << std::endl;
+	#endif
 };
 
 std::string const	Bureaucrat::getName(void) const{

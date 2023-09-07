@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:00:26 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/06 14:42:04 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:10:12 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main()
 	try
 	{
 		Bureaucrat b("Bureaucrate ", 1545);
+		Bureaucrat c(b);
 	} 
 	catch (std::exception& e)
 	{
