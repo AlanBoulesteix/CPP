@@ -6,17 +6,19 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 15:13:10 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/07 14:02:01 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/08 10:52:39 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 std::ostream&	operator<<(std::ostream& o, Form const& form){
 	o << form.getName() << "'s form " << std::endl
 		<< "state: " << (form.getState() ? "Yes" : "No") << std::endl
 		<< "Grade for signature : " << form.getLvlforSign() << std::endl
-		<< "Grade for execution : " << form.getLvlforExc() << std::endl;
+		<< "Grade for execution : " << form.getLvlforExc();
+	return (o);
 };
 
 Form::Form(): _name("default"), _signed(false), _gradeForSign(150), _gradeForExc(150){
@@ -45,7 +47,10 @@ Form::Form(std::string const name, bool state, int const gradeForSign, int const
 
 
 Form::Form(Form const& src)
-: 
+: _name(src.getName()),
+_signed(src.getState()),
+_gradeForSign(src.getLvlforSign()),
+_gradeForExc(src.getLvlforExc())
 {
 	#ifdef DEBUG
 		std::cout << "Bureaucrat Copy Constructor called" << std::endl;
@@ -57,6 +62,9 @@ Form	&Form::operator=(Form const& rhs){
 	#ifdef DEBUG
 		std::cout << "Bureaucrat Assignation constructor called" << std::endl;
 	#endif
+	if (this != &rhs)
+		_signed = rhs.getState();
+	return (*this);
 };
 
 std::string const	Form::getName(void) const{
@@ -67,22 +75,25 @@ bool 	Form::getState(void) const{
 	return (_signed);
 };
 
-int const	Form::getLvlforSign(void) const{
+int	Form::getLvlforSign(void) const{
 	return (_gradeForSign);
 };
 
-int const	Form::getLvlforExc(void) const{
+int	Form::getLvlforExc(void) const{
 	return (_gradeForExc);
 };
 
 void		Form::beSigned(Bureaucrat signatory){
-	
+	if (_gradeForSign >= signatory.getGrade())
+		_signed = true;
+	else
+		throw Form::GradeTooLowException();
 };
 
 const char* Form:: GradeTooHighException::what() const throw(){
-	//todo
+	return ("This grade is too high");
 };
 
 const char* Form:: GradeTooLowException::what() const throw(){
-	//todo
+	return ("This grade is too low");
 };

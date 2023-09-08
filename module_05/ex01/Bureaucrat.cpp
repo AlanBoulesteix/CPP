@@ -6,11 +6,12 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:09:16 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/06 14:20:48 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/08 10:17:53 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
 
 std::ostream& operator<<(std::ostream& o, Bureaucrat const& bureaucrat)
 {
@@ -77,6 +78,17 @@ void	Bureaucrat::decrementGrade(void){
 		throw (GradeTooLowException());
 	else
 		_grade++;
+};
+
+void	Bureaucrat::signForm(Form& form){
+	try {
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e ){
+		std::cout << _name << " couldn't sign " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
 };
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
