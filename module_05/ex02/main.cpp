@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:00:26 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/08 15:46:55 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/10 07:47:56 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 void	ShrubberyCreationFormOk()
 {
@@ -113,9 +114,26 @@ void	RobotomyRequestFormKo()
 	}
 }
 
-void	PresidentialPardonForm()
+void	PresidentialPardonFormOk()
 {
-	//
+	Bureaucrat pjay("Pjay", 5);
+	PresidentialPardonForm home("Home");
+	try 
+	{
+		pjay.signForm(home);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		pjay.executeForm(home);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 int main()
@@ -128,6 +146,8 @@ int main()
 	RobotomyRequestFormKo();
 	std::cout << "=========================" << std::endl;
 	RobotomyRequestFormOk();
+	std::cout << "=========================" << std::endl;
+	PresidentialPardonFormOk();
 	std::cout << "=========================" << std::endl;
 
 }

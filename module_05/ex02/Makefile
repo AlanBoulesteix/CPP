@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
+#    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/08 15:43:27 by aboulest         ###   ########.fr        #
+#    Updated: 2023/09/10 07:47:18 by alanboulest      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC			:= 	main.cpp \
 				AForm.cpp \
 				ShrubberyCreationForm.cpp \
 				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
