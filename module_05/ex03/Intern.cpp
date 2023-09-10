@@ -6,7 +6,7 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 08:08:35 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/09/10 19:05:15 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/10 19:09:33 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ AForm*  Intern::makeForm(std::string name, std::string target){
             delete forms[i];
     }
     if (ret != nullptr)
+    {
+        std::cout << "Intern creates " << ret->getName() << std::endl;
         return (ret);
+    }
     else
         throw Intern::FormNotFind();
 };
