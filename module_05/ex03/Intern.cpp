@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 08:08:35 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/09/10 19:09:33 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/11 09:54:16 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ AForm*  Intern::makeForm(std::string name, std::string target){
         new RobotomyRequestForm(target),
 		new ShrubberyCreationForm(target)
     };
-    AForm *ret = nullptr;
+    AForm *ret = NULL;
     
     for (int i = 0; i < 3; i++)
     {
@@ -49,7 +49,7 @@ AForm*  Intern::makeForm(std::string name, std::string target){
         else
             delete forms[i];
     }
-    if (ret != nullptr)
+    if (ret != NULL)
     {
         std::cout << "Intern creates " << ret->getName() << std::endl;
         return (ret);

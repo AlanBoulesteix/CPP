@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:00:26 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/10 19:04:44 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/11 09:54:16 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 {
 	Bureaucrat	jim("Jim", 2);
 	Intern		alan;
-	AForm		*form = nullptr;
+	AForm		*form = NULL;
 	std::string	nameForm[4] = {
 		"presidential pardon",
 		"robotomy request",
