@@ -6,7 +6,7 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 18:45:16 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 19:52:35 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,32 +73,29 @@ int		findType(std::string& str)
 	return (flag);
 }
 
-void	convertInt(std::string str)
-{
-	int	nb = atoi(str.c_str());
-	std::cout <<"Initial value = " << str << std::endl;
-	std::cout << "int convertion = " << static_cast<int>(nb) << std::endl;
-	std::cout << "Float convertion = " << static_cast<float>(nb) << std::endl;
-	std::cout << "Double convertion = " << static_cast<int>(nb) << std::endl;
-}
 
 void	convertChar(std::string str)
 {
 	char	c = str[0];
+	int		intValue = static_cast<int>(c) ;
+	float	floatValue = static_cast<float>(intValue);
+	double	doubleValue = static_cast<double>(intValue);
 	std::cout <<"Initial value = " << str << std::endl;
-	std::cout << "int convertion = " << static_cast<int>(c) << std::endl;
-	std::cout << "Float convertion = " << static_cast<float>(c) << std::endl;
-	std::cout << "Double convertion = " << static_cast<int>(c) << std::endl;
-	std::cout << "Char convertion = " << static_cast<char>(c) << std::endl;
+	std::cout << "int convertion = " << intValue << std::endl;
+	std::cout << "Float convertion = " << floatValue << std::endl;
+	std::cout << "Double convertion = " << doubleValue << std::endl;
+	std::cout << "Char convertion = " << c << std::endl;
+}
+
+void	convertInt(std::string str)
+{
+	std::cout <<"Initial value = " << str << std::endl;
 }
 
 void	convertFloat(std::string str)
 {
-	float	nb = atof(str.c_str());
-	std::cout <<"Initial value = " << str << std::endl;
-	std::cout << "int convertion = " << static_cast<int>(nb) << std::endl;
-	std::cout << "Float convertion = " << static_cast<float>(nb) << std::endl;
-	std::cout << "Double convertion = " << static_cast<int>(nb) << std::endl;
+	
+	std::cout << "Initial value = " << str << std::endl;
 }
 
 void	convertDouble(std::string str)
@@ -106,7 +103,7 @@ void	convertDouble(std::string str)
 	(void)str;
 }
 
-void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
-{
+// void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
+// {
 	
-}
+// }

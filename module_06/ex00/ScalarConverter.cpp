@@ -6,12 +6,12 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:14:48 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 18:37:54 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 19:48:18 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include "utils.cpp"
+#include "utils.hpp"
 
 ScalarConverter::ScalarConverter(){
 	
