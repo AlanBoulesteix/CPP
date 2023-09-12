@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:14:48 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/11 20:11:27 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 15:00:58 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include "utils.cpp"
 
 ScalarConverter::ScalarConverter(){
 	
@@ -34,43 +35,24 @@ ScalarConverter	&ScalarConverter::operator=(const ScalarConverter& rhs){
 	return (*this);
 };
 
-int		findType(std::string& attribut)
-{
-	try {
-		std::size_t pos = 0;
-		int i = std::stoi(attribut, &pos);
-		if (pos == attribut.length())
-			return (INT_FLAG);
-		pos = 0;
-		float f = std::stof(attribut, &pos);
-		if (pos == attribut.length())
-			return (FLOAT_FLAG);
-		pos = 0;
-		double d = std::stod(attribut, &pos);
-		if (pos == attribut.length())
-			return (DOUBLE_FLAG);
-		if (attribut.length() == 1 && std::isprint(attribut[0]))
-			return (CHAR_FLAG);
-		return (UNKNOW);
-	}
-	catch (const std::out_of_range&)
-	{
-		std::cerr << "Out of range" << std::endl;
-	}
-	return (0);
-}
 void	ScalarConverter::convert(){
 	int	type = findType(_att);
+
 	std::string	types[4] = {
 		"char",
 		"int",
 		"float",
 		"double"
 	};
-	int	nb[4] = {1,2,4,8};
-	for (int i = 0; i < 4; i++)
+	if (!(type & (CHAR_FLAG | INT_FLAG | FLOAT_FLAG | DOUBLE_FLAG)))
 	{
-		if (type == nb[i])
-			std::cout << "Type = " << types[i] << std::endl;
+		std::cerr << "Undefine type" << std::endl;
+		return ;
 	}
+	if (type == CHAR_FLAG)
+		convertChar(_att);
+	else if (type == INT_FLAG)
+		convertInt(_att);
+	else if (type == FLOAT_FLAG)
+		convertFloat(_att);
 };

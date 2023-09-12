@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:52:34 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/11 20:09:24 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 13:32:02 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 
 int main()
 {
-	ScalarConverter	a("1");
+	std::string	input;
+	while (1)
+	{
+		std::cin >> input;
+		ScalarConverter	a(input);
 	
-	a.convert();
+		a.convert();
+	}
 	return (0);
 }
