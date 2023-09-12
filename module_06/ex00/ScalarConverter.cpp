@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:14:48 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 15:00:58 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:37:54 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 #include "utils.cpp"
 
 ScalarConverter::ScalarConverter(){
-	
-};
-
-ScalarConverter::ScalarConverter(std::string attribut): _att(attribut){
 	
 };
 
@@ -35,9 +31,8 @@ ScalarConverter	&ScalarConverter::operator=(const ScalarConverter& rhs){
 	return (*this);
 };
 
-void	ScalarConverter::convert(){
-	int	type = findType(_att);
-
+void	ScalarConverter::convert(std::string str){
+	int	type = findType(str);
 	std::string	types[4] = {
 		"char",
 		"int",
@@ -50,9 +45,9 @@ void	ScalarConverter::convert(){
 		return ;
 	}
 	if (type == CHAR_FLAG)
-		convertChar(_att);
+		convertChar(str);
 	else if (type == INT_FLAG)
-		convertInt(_att);
+		convertInt(str);
 	else if (type == FLOAT_FLAG)
-		convertFloat(_att);
+		convertFloat(str);
 };

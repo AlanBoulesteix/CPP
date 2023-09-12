@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 15:08:10 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:45:16 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,9 @@ void	convertFloat(std::string str)
 void	convertDouble(std::string str)
 {
 	(void)str;
+}
+
+void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
+{
+	
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:46:31 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 13:03:52 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:36:56 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ class ScalarConverter {
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& src);
 		ScalarConverter	&operator=(const ScalarConverter& rhs);
+		~ScalarConverter();
 
 	public:
 
-		ScalarConverter(std::string attribut);
-		~ScalarConverter();
-		
-		void	convert();
+		static void		convert(std::string str);
 };
 
 #endif
