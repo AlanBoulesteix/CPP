@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:52:34 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/11 14:52:55 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:09:24 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main()
 {
-
+	ScalarConverter	a("1");
+	
+	a.convert();
 	return (0);
 }
