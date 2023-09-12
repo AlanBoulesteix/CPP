@@ -6,7 +6,7 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 19:52:35 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 21:37:57 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,8 @@ void	convertDouble(std::string str)
 	(void)str;
 }
 
-// void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
-// {
-	
-// }
+void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
+{
+	std::string	cStr(1, charV);
+	std::string	iStr(intV);
+}
