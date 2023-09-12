@@ -41,7 +41,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm & 
 void	robotomize(std::string target)
 {
 	std::cout << "🎵 DRILING NOISES 🎵" <<std::endl;
-	std::srand(std::time(nullptr)); 
+	std::srand(time(NULL)); 
 	if ((std::rand()) % 2 == 0)
 		std::cout << target << " has been robotomized " << std::endl;
 	else

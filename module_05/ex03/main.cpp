@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:00:26 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/11 09:54:16 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:23:12 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int main()
 {
 	Bureaucrat	jim("Jim", 2);
-	Intern		alan;
+	Intern		julien;
 	AForm		*form = NULL;
 	std::string	nameForm[4] = {
 		"presidential pardon",
@@ -33,7 +33,7 @@ int main()
 	for (int i = 0; i < 4; i++)
 	{
 		try {
-			form = alan.makeForm(nameForm[i], "Random Target");
+			form = julien.makeForm(nameForm[i], "Random Target");
 			jim.signForm(*form);
 			jim.executeForm(*form);
 			delete form;

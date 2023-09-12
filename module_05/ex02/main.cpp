@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:00:26 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/10 07:47:56 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/12 16:15:23 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ShrubberyCreationFormOk()
 
 void	ShrubberyCreationFormKo()
 {
-	Bureaucrat axel("Axel", 150);
+	Bureaucrat axel("Axel", 138);
 	ShrubberyCreationForm home("Home");
 	try 
 	{
@@ -58,12 +58,22 @@ void	ShrubberyCreationFormKo()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	try
+	{
+		axel.incrementGrade();
+		axel.executeForm(home);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
 
 void	RobotomyRequestFormOk()
 {
 	Bureaucrat pjay("Pjay", 72);
-	Bureaucrat axel("Pjay", 45);
+	Bureaucrat axel("Axel", 45);
 	RobotomyRequestForm home("Home");
 	try 
 	{
