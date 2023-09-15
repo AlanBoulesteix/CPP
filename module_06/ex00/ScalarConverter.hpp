@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:46:31 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 18:36:56 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/15 11:28:03 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # define INT_FLAG		2
 # define FLOAT_FLAG		4
 # define DOUBLE_FLAG	8
-# define FULL_FLAG		15
+# define PSEUDO_FLAG	16
+# define FULL_FLAG		31
 
 class ScalarConverter {
 

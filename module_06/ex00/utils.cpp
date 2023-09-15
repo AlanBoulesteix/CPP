@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/14 13:25:24 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:05:47 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,17 @@ bool	isDouble(std::string str)
 	return (counterDote == 1 && counterF == 0);
 }
 
+bool	isPseudo(std::string str)
+{
+	std::string	list[8] = {"-inff", "+inff", "nanf","-inf", "+inf", "nan", "inf", "inff"};
+	for (int i = 0; i < 8; ++i)
+	{
+		if (str == list[i])
+			return (true);
+	}
+	return (false);
+}
+
 int		findType(std::string& str)
 {
 	int		flag = FULL_FLAG;
@@ -79,6 +90,8 @@ int		findType(std::string& str)
 		flag -= FLOAT_FLAG;
 	if (!isDouble(str))
 		flag -= DOUBLE_FLAG;
+	if (!isPseudo(str))
+		flag -= PSEUDO_FLAG;
 	return (flag);
 }
 
@@ -99,9 +112,9 @@ void	convertChar(std::string str)
 
 void	convertInt(std::string str)
 {
-	if (atof(str.c_str()) < -2147483648.0 || atof(str.c_str()) > 2147483647.0)
+	if (atol(str.c_str()) < std::numeric_limits<int>::min() || atol(str.c_str()) > std::numeric_limits<int>::max())
 	{
-		std::cerr << "INT OVERFLOW" << std::endl << "Could not convert" << std::endl;
+		std::cerr << "IMPOSSIBLE" << std::endl << "Could not convert" << std::endl;
 		return ;
 	}
 	int		intValue = atoi(str.c_str());
@@ -121,6 +134,12 @@ void	convertInt(std::string str)
 	std::cout << "Double convertion = " << doubleValue << ".0" << std::endl;
 }
 
+bool	isIntOverflow(std::string str)
+{
+	long	longValue = atol(str.c_str());
+	return (longValue < std::numeric_limits<int>::min() || longValue > std::numeric_limits<int>::max());
+}
+
 void	convertFloat(std::string str)
 {
 	std::stringstream	ss(str);
@@ -138,11 +157,10 @@ void	convertFloat(std::string str)
 		std::cout << "Char convertion = Impossible" << std::endl;
 	else
 		std::cout << "Char convertion = Non displayable" << std::endl;
-	//Probleme sur le overflow de int
-	if (floatValue >= std::numeric_limits<int>::min() && floatValue <= std::numeric_limits<float>::max())
+	if (!isIntOverflow(str))
 		std::cout << "int convertion = " << intValue << std::endl;
 	else
-		std::cout << "int convertion = INT OVERFLOW" << std::endl;
+		std::cout << "int convertion = IMPOSSIBLE" << std::endl;
 	std::cout << "Float convertion = " << floatValue << std::endl;
 	std::cout << "Double convertion = " << doubleValue << std::endl;
 }
@@ -164,10 +182,29 @@ void	convertDouble(std::string str)
 	if (doubleValue >= -2147483648.0f && doubleValue <= 2147483647.0f)
 		std::cout << "int convertion = " << intValue << std::endl;
 	else
-		std::cout << "int convertion = INT OVERFLOW" << std::endl;
+		std::cout << "int convertion = IMPOSSIBLE" << std::endl;
 	if (doubleValue >= std::numeric_limits<float>::min() && doubleValue <= std::numeric_limits<float>::max())
 		std::cout << "Float convertion = " << floatValue << std::endl;
 	else
-		std::cout << "Float convertion = FLOAT OVERFLOW" << std::endl;
+		std::cout << "Float convertion = IMPOSSIBLE" << std::endl;
 	std::cout << "Double convertion = " << doubleValue << std::endl;
+}
+
+bool isPseudoFloat(std::string str)
+{
+	std::string		list[4] = { "-inff", "+inff", "nanf", "inff" };
+
+	for (size_t i = 0; i < 4; ++i)
+	{
+		if (list[i] == str)
+			return (true);
+	}
+	return (false);
+}
+
+void	convertPseudo(std::string str){
+	std::cout << "Char convertion = IMPOSSIBLE" << std::endl;
+	std::cout << "int convertion = IMPOSSIBLE" << std::endl;
+	std::cout << "float convertion = " << ((isPseudoFloat(str))? str : str + "f") << std::endl;
+	std::cout << "double convertion = " << ((isPseudoFloat(str))? str.erase(str.length()-1, 1) : str) << std::endl;
 }

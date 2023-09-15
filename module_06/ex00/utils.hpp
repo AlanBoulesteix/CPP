@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 19:50:34 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/15 11:30:43 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	convertInt(std::string str);
 void	convertChar(std::string str);
 void	convertFloat(std::string str);
 void	convertDouble(std::string str);
+void	convertPseudo(std::string str);
 
 // void	printAllConvertion(char charV, int intV, float floatV, double doubleV)
 // {

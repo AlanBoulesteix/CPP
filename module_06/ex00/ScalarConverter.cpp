@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:14:48 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/12 19:48:18 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/15 11:30:22 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,8 @@ ScalarConverter	&ScalarConverter::operator=(const ScalarConverter& rhs){
 
 void	ScalarConverter::convert(std::string str){
 	int	type = findType(str);
-	std::string	types[4] = {
-		"char",
-		"int",
-		"float",
-		"double"
-	};
-	if (!(type & (CHAR_FLAG | INT_FLAG | FLOAT_FLAG | DOUBLE_FLAG)))
+
+	if (!(type & (CHAR_FLAG | INT_FLAG | FLOAT_FLAG | DOUBLE_FLAG | PSEUDO_FLAG)))
 	{
 		std::cerr << "Undefine type" << std::endl;
 		return ;
@@ -50,4 +45,8 @@ void	ScalarConverter::convert(std::string str){
 		convertInt(str);
 	else if (type == FLOAT_FLAG)
 		convertFloat(str);
+	else if (type == DOUBLE_FLAG)
+		convertDouble(str);
+	else if (type == PSEUDO_FLAG)
+		convertPseudo(str);
 };
