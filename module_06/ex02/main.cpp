@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 14:52:34 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/16 16:21:03 by alanboulest      ###   ########.fr       */
+/*   Created: 2023/09/16 18:21:05 by alanboulest       #+#    #+#             */
+/*   Updated: 2023/09/16 18:31:21 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "Serializer.hpp"
-#include "Data.hpp"
+#include "Base.hpp"
+#include <unistd.h>
 
 int main()
 {
-    Data    *a = new Data("Mass Structure ", 42, true);
-    std::cout << *a << std::endl;
-    std::cout << a << std::endl;
-    try {
-        uintptr_t rawptr = Serializer::serialize(a);
-        std::cout << "============================" << std::endl;
-        Data *b = Serializer::deserialize(rawptr);
-        std::cout << *b << std::endl;
-        std::cout << b << std::endl;
-    }
-    catch (std::exception &e){
-        std::cout << e.what() << std::endl;
-    }
-    delete a;
-    return (0);
+    Base	*base1 = generate();
+    sleep(1);
+	Base	*base2 = generate();
+    sleep(1);
+	Base	*base3 = generate();
 
+    identify(base1);
+	identify(base2);
+	identify(base3);
+
+    identify(*base1);
+	identify(*base2);
+	identify(*base3);
+    
+    delete base1;
+    delete base2;
+    delete base3;
 }

@@ -6,18 +6,17 @@
 #    By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/16 16:19:00 by alanboulest      ###   ########.fr        #
+#    Updated: 2023/09/16 16:22:07 by alanboulest      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= serializer
+NAME		:= Identify
 
 CC			:= c++
 FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
 SRC			:= 	main.cpp \
-				Data.cpp \
-				Serializer.cpp \
+				Base.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
