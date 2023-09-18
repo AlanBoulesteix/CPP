@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:09:08 by aboulest          #+#    #+#             */
-/*   Updated: 2023/08/10 23:12:19 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/18 14:25:24 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
