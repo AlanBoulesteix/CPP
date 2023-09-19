@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:00:51 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/09/16 16:12:19 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/19 10:53:01 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

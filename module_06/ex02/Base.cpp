@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:16:28 by alanboulest       #+#    #+#             */
-/*   Updated: 2023/09/16 18:28:29 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/09/19 11:03:15 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 Base    *generate(void)
 {
-    std::srand(time(NULL)); 
 	switch (std::rand() % 3) 
     {
         case 0:
