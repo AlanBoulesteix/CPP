@@ -6,7 +6,7 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/12 15:08:39 by aboulest         ###   ########.fr        #
+#    Updated: 2023/09/19 12:23:45 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 SRC			:= 	main.cpp \
 				ScalarConverter.cpp \
 				utils.cpp \
+				convert.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
