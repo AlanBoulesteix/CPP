@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:14:48 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/15 11:30:22 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:48:37 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ScalarConverter::convert(std::string str){
 		std::cerr << "Undefine type" << std::endl;
 		return ;
 	}
+	std::cout << type << std::endl;
 	if (type == CHAR_FLAG)
 		convertChar(str);
 	else if (type == INT_FLAG)

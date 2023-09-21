@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:33:32 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/19 13:26:12 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:07:29 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ bool	isFloat(std::string str)
 			i++;
 		if (str[i] == '.')
 			counterDote++;
-		else if (str[i] == 'f')
+		else if (str[i] == 'f' || str[i] == 'F')
 			counterF++;
 		else if (!isdigit(str[i]) && str[i] == '-')
 			return (false);
@@ -55,7 +55,7 @@ bool	isDouble(std::string str)
 			i++;
 		if (str[i] == '.')
 			counterDote++;
-		else if (str[i] == 'f')
+		else if (str[i] == 'f' || str[i] == 'F')
 			counterF++;
 		else if (!isdigit(str[i]) && str[i] == '-')
 			return (false);
