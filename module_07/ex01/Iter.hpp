@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:43:37 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/18 17:20:32 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:19:31 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	printArray(T data)
 template < typename T>
 void	incrementArray(T &data)
 {
-	data++;
+	++data;
 }
 
 class Personne {
@@ -54,7 +54,6 @@ class Personne {
 		std::string		getName() const { return (_name);};
 		int				getAge() const { return (_age);};
 		Personne		&operator++( void ){_age++; return(*this);};
-		Personne 		&operator++( int ){Personne tmp(*this); ++_age;return(tmp);};
 };
 
 std::ostream& operator<<(std::ostream & o, Personne const & p){
