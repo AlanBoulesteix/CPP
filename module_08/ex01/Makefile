@@ -6,16 +6,17 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/21 10:53:09 by aboulest         ###   ########.fr        #
+#    Updated: 2023/09/22 12:25:01 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= array
+NAME		:= Span
 
 CC			:= c++
 FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
 SRC			:= 	main.cpp \
+				Span.cpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
