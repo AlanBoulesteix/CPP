@@ -6,17 +6,18 @@
 #    By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 16:46:22 by aboulest          #+#    #+#              #
-#    Updated: 2023/09/22 12:25:01 by aboulest         ###   ########.fr        #
+#    Updated: 2023/09/22 16:45:42 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:= Span
+NAME		:= MutantStack
 
 CC			:= c++
 FLAGS		:= -Wall -Wextra -Werror -MMD -std=c++98 -g3
 
 SRC			:= 	main.cpp \
-				Span.cpp \
+
+HEADER		:=	MutantStack.tpp \
 
 OBJ_DIR 	:= ./objs/
 C_OBJ_DIR	:= @mkdir -p $(OBJ_DIR)
