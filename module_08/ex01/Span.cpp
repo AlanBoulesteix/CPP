@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:54:06 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/22 12:22:59 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:15:29 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Span::addNumber(int nb){
 };
 
 void	Span::addNumber(std::vector<int> tabInt){
-	if (_intContainer.size() == _maxLen)
+	if (_intContainer.size() + tabInt.size() >= _maxLen)
 		throw Span::ContainerFullException();
 	_intContainer.insert(_intContainer.end(), tabInt.begin(), tabInt.end());
 };
