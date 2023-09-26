@@ -6,9 +6,11 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:42:04 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/26 14:11:01 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:44:53 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 #include <stack>
