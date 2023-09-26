@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:42:04 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/25 13:51:21 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:11:01 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ class RPN {
 		RPN();
 		~RPN();
 		
-		void	addParam(int param);
-		int		rpn();
+		std::stack<int>		getStack() const ;
+		void				addParam(int param);
+		int					popParam(void);
+		int					rpn(std::string str);
 		
 		class WrongTypeErrorException : public std::exception {
 			public :
