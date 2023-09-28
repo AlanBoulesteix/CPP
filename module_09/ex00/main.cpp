@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:29:52 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/27 18:05:15 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:02:25 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,8 @@ void	exchange(std::ifstream &walletFile, BitcoinExchange &btc)
 	std::string		subDate;
 	std::string		subNbBTC;
 	int				indexSep;
-	int				value;
+	float			value;
 
-	(void)btc;
 	getline(walletFile, buffer);
 	if (buffer != "date | value")
 	{
@@ -70,9 +69,14 @@ void	exchange(std::ifstream &walletFile, BitcoinExchange &btc)
 	}
 	while (getline(walletFile, buffer))
 	{
+		if (buffer.length() < 10)
+		{
+			std::cout << "Error: bad input => " << buffer << std::endl;
+			continue ;
+		}
 		indexSep = buffer.find("|");
 		subDate = buffer.substr(0, indexSep);
-		subNbBTC = buffer.substr(indexSep + 2, buffer.npos);
+		subNbBTC = buffer.substr(indexSep + 2, buffer.npos - (indexSep + 2));
 		if (!isFormatDateOk(subDate))
 		{
 			std::cout << "Error: bad input => " << subDate << std::endl;

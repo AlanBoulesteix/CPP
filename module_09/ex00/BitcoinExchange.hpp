@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 17:44:38 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/27 18:00:04 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:13:19 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ class BitcoinExchange {
 		float			compute(std::string date, float nbBTC);
 		
 		class OpenDataFailException: public std::exception 
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		class WrongHeaderException: public std::exception 
 		{
 			public:
 				virtual const char* what() const throw();

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:43:16 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/27 18:00:32 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:26:27 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ void	BitcoinExchange::fillBTCValue(){
 
 		if (!btcValueFile.is_open())
 			throw BitcoinExchange::OpenDataFailException();
+		getline(btcValueFile, buffer);
+		if (buffer != "date,exchange_rate")
+		{
+			btcValueFile.close();
+			throw BitcoinExchange::WrongHeaderException();
+		}
 		while(getline(btcValueFile, buffer))
 		{
 			indexSep = buffer.find(",");
@@ -49,12 +55,13 @@ void	BitcoinExchange::fillBTCValue(){
 };
 
 std::string		BitcoinExchange::findNearestDate(std::string date) const{
-	int		year;
-	int		month;
-	int		day;
-	int		yearNearest;
-	int		monthNearest;
-	int		dayNearest;
+	int				year;
+	int				month;
+	int				day;
+	int				yearNearest;
+	int				monthNearest;
+	int				dayNearest;
+	std::string		nearestDate;
 	
 
 	year = atoi(date.substr(0, 4).c_str()) * 365;
@@ -65,10 +72,10 @@ std::string		BitcoinExchange::findNearestDate(std::string date) const{
 		yearNearest = atoi(it->first.substr(0, 4).c_str()) * 365;
 		monthNearest = atoi(it->first.substr(5, 2).c_str()) * 30;
 		dayNearest = atoi(it->first.substr(8, 2).c_str());
-		if ( yearNearest + monthNearest + dayNearest < year + month + day)
-			return (it->first);
+		if (yearNearest + monthNearest + dayNearest < year + month + day)
+			nearestDate = it->first;
 	}
-	return (date);
+	return (nearestDate);
 };
 
 float	BitcoinExchange::compute(std::string date, float nbBTC) {
@@ -83,6 +90,10 @@ float	BitcoinExchange::compute(std::string date, float nbBTC) {
 
 const char* BitcoinExchange::OpenDataFailException::what() const throw(){
 	return ("Open data.csv failed");
+};
+
+const char* BitcoinExchange::WrongHeaderException::what() const throw(){
+	return ("Wrong Header in data.csv");
 };
 
 const char* BitcoinExchange::NbTooLowException::what() const throw(){
