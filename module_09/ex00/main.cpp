@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:29:52 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/28 12:02:25 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:12:12 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	exchange(std::ifstream &walletFile, BitcoinExchange &btc)
 			std::cout << "Error: bad input => " << subNbBTC << std::endl;
 			continue ;
 		}
-		try {
+		try {2020-01-11 | 100
 			value = btc.compute(subDate, atof(subNbBTC.c_str()));
 			std::cout << subDate << "=> " << subNbBTC << " = " << value << std::endl;
 		}
