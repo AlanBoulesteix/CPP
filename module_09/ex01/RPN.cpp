@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:51:52 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/26 16:51:32 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:05:44 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ int	compute(RPN &rpn, char op)
 	else if (op == '*')
 		return (nb2 * nb1);
 	else if (op == '/')
+	{
+		if (nb1 == 0)
+			throw RPN::ComputeErrorException();
 		return (nb2 / nb1);
+	}
 	throw RPN::ComputeErrorException();
 }
 
