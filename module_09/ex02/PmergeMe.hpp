@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:13:19 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/28 18:17:12 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/10/01 12:11:20 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,27 @@ class PmergeMe {
 			public:
 				virtual const char *what() const throw();
 		};
+};
+
+class	PairOfInt {
+
+	private :
+
+		int		_small;
+		int		_big;
+		int		_indexInMain;
+
+		PairOfInt(const PairOfInt &src);
+		PairOfInt	&operator=(const PairOfInt &rhs);
+
+	public :
+
+		PairOfInt();
+		~PairOfInt();
+
+		int		getSmall() const;
+		int		getBig() const;
+		int		getIndex() const;
+		void	setNumber(int small, int big);
+		void	setIndex(int indexInMain);
 };

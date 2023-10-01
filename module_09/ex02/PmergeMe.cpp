@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:20:06 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/28 18:17:45 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/10/01 12:15:01 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,25 @@ PmergeMe	&PmergeMe::operator=(const PmergeMe &rhs){
 PmergeMe::~PmergeMe(){
 
 };
+
 template <typename T>
 void	PmergeMe::sortContainer(T &container){
-	(void)container;
+	T			mainContainer;
+	int			index = 0;
+	int			lenPointeur = container.size() % 2 == 0 ? container.size()/2 : (container.size()/2 +) 1;
+	PairOfInt	*listOfPair = new PairOfInt[lenPointeur];
+	
+	for (size_t i = 0; i < container.size(); i += 2)
+	{
+		if ( container[i + 1] == container.end())
+			listOfPair[index].setNumber(containe[i], -1);
+		else if (container[i] > container[i + 1])
+			listOfPair[index].setNumber(containe[i + 1], container[i]);
+		else
+			listOfPair[index].setNumber(containe[i], container[i + 1]);
+	}
+	
+	delete [] PairOfInt;
 };
 
 void	PmergeMe::before() const {
@@ -96,4 +112,45 @@ const char *PmergeMe::WrongParameterException::what() const throw() {
 
 const char *PmergeMe::NegatifIntegerException::what() const throw() {
 	return ("Wrong parameter type. Only positif integer are allowed.");
+};
+
+
+/**************************CLASS PAIR OF INT*********************/
+
+PairOfInt::PairOfInt(){
+	
+};
+
+PairOfInt::~PairOfInt(){
+	
+};
+
+PairOfInt::PairOfInt(const PairOfInt &src){
+	(void)src;
+};
+
+PairOfInt	&PairOfInt::operator=(const PairOfInt &rhs){
+	(void)rhs;
+	return (*this);
+};
+
+int		PairOfInt::getSmall() const{
+	return (_small);
+};
+
+int		PairOfInt::getBig() const{
+	return (_big);
+};
+
+int		PairOfInt::getIndex() const{
+	return (_indexInMain);
+};
+
+void	PairOfInt::setNumber(int small, int big){
+	_small = small;
+	_big = big;
+};
+
+void	PairOfInt::setIndex(int indexInMain){
+	_indexInMain = indexInMain;
 };
