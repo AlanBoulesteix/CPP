@@ -6,7 +6,7 @@
 /*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:20:06 by aboulest          #+#    #+#             */
-/*   Updated: 2023/10/01 12:15:01 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/10/01 21:12:32 by alanboulest      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	PmergeMe::sortContainer(T &container){
 			listOfPair[index].setNumber(containe[i + 1], container[i]);
 		else
 			listOfPair[index].setNumber(containe[i], container[i + 1]);
+		index++;
 	}
 	
 	delete [] PairOfInt;
