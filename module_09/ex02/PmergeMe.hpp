@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanboulesteix <alanboulesteix@student.    +#+  +:+       +#+        */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:13:19 by aboulest          #+#    #+#             */
-/*   Updated: 2023/10/01 12:11:20 by alanboulest      ###   ########.fr       */
+/*   Updated: 2023/10/02 16:23:55 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iomanip>
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <list>
+# include <sys/time.h>
+# include <iomanip>
+# include <iostream>
+# include <algorithm>
+# include <vector>
+# include <deque>
 
 class PmergeMe {
 
@@ -28,12 +29,14 @@ class PmergeMe {
 
 		template <typename T>
 		void	sortContainer(T &container);
-
+		template <typename T>
+		void	binarySearchInsertion(T& container, int element);
+		
 		std::vector<std::string>		_listInitiale;
 		std::vector<int>				_vectorInt;
-		std::list<int>					_listInt;
-		int								_timeVector;
-		int								_timeList;
+		std::deque<int>					_dequeInt;
+		long long int					_timeVector;
+		long long int					_timeDeque;
 
 	public:
 
@@ -55,25 +58,4 @@ class PmergeMe {
 		};
 };
 
-class	PairOfInt {
-
-	private :
-
-		int		_small;
-		int		_big;
-		int		_indexInMain;
-
-		PairOfInt(const PairOfInt &src);
-		PairOfInt	&operator=(const PairOfInt &rhs);
-
-	public :
-
-		PairOfInt();
-		~PairOfInt();
-
-		int		getSmall() const;
-		int		getBig() const;
-		int		getIndex() const;
-		void	setNumber(int small, int big);
-		void	setIndex(int indexInMain);
-};
+long long int	getTime();
