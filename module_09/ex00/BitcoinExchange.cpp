@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:43:16 by aboulest          #+#    #+#             */
-/*   Updated: 2023/09/28 11:26:27 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:35:09 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	BitcoinExchange::fillBTCValue(){
 			_btcValue[sub] = atof(buffer.substr(indexSep + 1, buffer.length() - 1).c_str());
 		}
 		btcValueFile.close();
+		if (_btcValue.size() <= 1)
+		throw BitcoinExchange::OpenDataFailException();
 };
 
 std::string		BitcoinExchange::findNearestDate(std::string date) const{
