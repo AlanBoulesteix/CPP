@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:20:06 by aboulest          #+#    #+#             */
-/*   Updated: 2023/10/02 16:39:27 by aboulest         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:23:27 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,56 +76,56 @@ PmergeMe::~PmergeMe(){
 
 };
 
-void	insertNumberOfJacob(std::vector<int> &jacobList)
+void	insertNumberOfJacob(std::vector<int> &Jacobsthal)
 {
-	jacobList.push_back(0);
-    jacobList.push_back(2);
-    jacobList.push_back(4);
-    jacobList.push_back(10);
-    jacobList.push_back(20);
-    jacobList.push_back(42);
-    jacobList.push_back(84);
-    jacobList.push_back(170);
-    jacobList.push_back(340);
-    jacobList.push_back(682);
-    jacobList.push_back(1364);
-    jacobList.push_back(2730);
-    jacobList.push_back(5460);
-    jacobList.push_back(10922);
-    jacobList.push_back(21844);
-    jacobList.push_back(43690);
-    jacobList.push_back(87380);
-    jacobList.push_back(174762);
-    jacobList.push_back(349524);
-    jacobList.push_back(699050);
-    jacobList.push_back(1398100);
-    jacobList.push_back(2796202);
-    jacobList.push_back(5592404);
-    jacobList.push_back(11184810);
-    jacobList.push_back(22369620);
-    jacobList.push_back(44739242);
-    jacobList.push_back(89478484);
-    jacobList.push_back(178956970);
-    jacobList.push_back(357913940);
-    jacobList.push_back(715827882);
-    jacobList.push_back(1431655764);
-    jacobList.push_back(2147483647);
+	Jacobsthal.push_back(0);
+	Jacobsthal.push_back(2);
+	Jacobsthal.push_back(4);
+	Jacobsthal.push_back(10);
+	Jacobsthal.push_back(20);
+	Jacobsthal.push_back(42);
+	Jacobsthal.push_back(84);
+	Jacobsthal.push_back(170);
+	Jacobsthal.push_back(340);
+	Jacobsthal.push_back(682);
+	Jacobsthal.push_back(1364);
+	Jacobsthal.push_back(2730);
+	Jacobsthal.push_back(5460);
+	Jacobsthal.push_back(10922);
+	Jacobsthal.push_back(21844);
+	Jacobsthal.push_back(43690);
+	Jacobsthal.push_back(87380);
+	Jacobsthal.push_back(174762);
+	Jacobsthal.push_back(349524);
+	Jacobsthal.push_back(699050);
+	Jacobsthal.push_back(1398100);
+	Jacobsthal.push_back(2796202);
+	Jacobsthal.push_back(5592404);
+	Jacobsthal.push_back(11184810);
+	Jacobsthal.push_back(22369620);
+	Jacobsthal.push_back(44739242);
+	Jacobsthal.push_back(89478484);
+	Jacobsthal.push_back(178956970);
+	Jacobsthal.push_back(357913940);
+	Jacobsthal.push_back(715827882);
+	Jacobsthal.push_back(1431655764);
+	Jacobsthal.push_back(2147483647);
 }
 
 template <typename T>
-void	PmergeMe::binarySearchInsertion(T& container, int element){
-    int left = 0;
-    int right = container.size() - 1;
-
-    while (left <= right)
+void	PmergeMe::binarySearchInsertion(T& main, int element){
+	int left = 0;
+	int right = main.size() - 1;
+	int middle;
+	while (left <= right)
 	{
-        int middle = left + (right - left) / 2;
-        if (element < container[middle])
-            right = middle - 1;
-        else
-            left = middle + 1;
-    }
-    container.insert(container.begin() + left, element);
+		middle = left + (right - left) / 2;
+		if (element < main[middle])
+			right = middle - 1;
+		else
+			left = middle + 1;
+	}
+	main.insert(main.begin() + left, element);
 };
 
 template <typename T>
@@ -146,8 +146,8 @@ void	PmergeMe::sortContainer(T &container){
 		T panding;
 		for (size_t i = 1; i < container.size(); i += 2)
 			panding.push_back(container[i]);
-		int sizeTot = panding.size();
-		for (int index = 0; index < sizeTot; index++)
+		int	sizeMax = panding.size();
+		for (int index = 0; index < sizeMax; index++)
 		{
 			int j = 0;
 			int finalIndex;
@@ -155,8 +155,8 @@ void	PmergeMe::sortContainer(T &container){
 				j++;
 			if (j != 0)
 			{
-				if (sizeTot - 1 <= Jacobsthal[j])
-					finalIndex = sizeTot - (index - Jacobsthal[j - 1]);
+				if (sizeMax - 1 <= Jacobsthal[j])
+					finalIndex = sizeMax - (index - Jacobsthal[j - 1]);
 				else
 					finalIndex = Jacobsthal[j] + 1 - (index - Jacobsthal[j - 1]); 
 			}
